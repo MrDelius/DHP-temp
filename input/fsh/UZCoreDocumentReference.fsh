@@ -18,7 +18,6 @@ Description: "Uzbekistan Core DocumentReference Profile, used to stores the meta
 * category MS
 * subject MS
 * context MS
-* event MS
 * bodySite MS
 * facilityType MS
 * practiceSetting MS
@@ -34,17 +33,17 @@ Description: "Uzbekistan Core DocumentReference Profile, used to stores the meta
   * code MS
   * target MS
 * description MS
-* securityLabel MS
 * content MS
   * attachment MS
-  * profile MS
-    * value[x] MS
 
 
 * status from DocumentRefereceStatusVS (required)
 * docStatus from DocumentReferenceCompostiontionStatusVS (required)
-* bodySite from $bodysite
-* facilityType from $c80-facilitycodes
+* bodySite from $bodysite (example)
+* facilityType from OrganizationalStructureVS (extensible)
+* practiceSetting from $c80-practice-codes (example)
+
+
 
 * docStatus only Reference(UZCorePatient or Group or Device or UZCorePractitioner or UZCoreOrganization or UZCoreLocation)
 * encounter only Reference(UZCoreEncounter)
