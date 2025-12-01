@@ -1,9 +1,8 @@
 CodeSystem: DocumentReferenceCompostiontionStatusCS
-Id: documentreference-composition-status-cs
+Id: document-reference-composition-status-cs
 Title: "DocumentReference Composition Status Translations"
 Description: "DocumentReference Composition Status supplement with translations in Uzbek and Russian for DHP."
-* ^url = "https://terminology.dhp.uz/fhir/core/CodeSystem/documentreference-composition-status-cs"
-* insert SupplementCodeSystemDraft(documentreference-composition-status-cs, $documentreference-composition-status, 5.0.0)
+* insert SupplementCodeSystemDraft(document-reference-composition-status-cs, $document-reference-composition-status, 5.0.0)
 
 * #registered
   * ^designation[0].language = #ru

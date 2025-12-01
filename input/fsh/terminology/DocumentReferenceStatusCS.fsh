@@ -1,8 +1,8 @@
 CodeSystem: DocumentReferenceStatusCS
-Id: documentreference-status-cs
+Id: document-reference-status-cs
 Title: "Document Reference Status Translations"
 Description: "Document Reference Status supplement with translations in Uzbek and Russian for DHP."
-* insert SupplementCodeSystemDraft(documentreference-status-cs, $documentreference-status, 5.0.0)
+* insert SupplementCodeSystemDraft(document-reference-status-cs, $document-reference-status, 5.0.0)
 
 * #current
   * ^designation[0].language = #ru

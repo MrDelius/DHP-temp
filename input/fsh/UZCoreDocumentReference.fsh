@@ -1,7 +1,7 @@
 Profile: UZCoreDocumentReference
 Parent: DocumentReference
 Id: uz-core-documentreference
-Title: "UZ Core Procedure"
+Title: "UZ Core DocumentReference"
 Description: "Uzbekistan Core DocumentReference Profile, used to stores the metadata for a clinical document of any format (e.g., text, scan, image, or media) to enable its discovery, identification, and management"
 * ^experimental = true
 * ^status = #active
@@ -13,7 +13,6 @@ Description: "Uzbekistan Core DocumentReference Profile, used to stores the meta
 * basedOn MS
 * status MS
 * docStatus MS
-* modality MS
 * type MS
 * category MS
 * subject MS
@@ -37,13 +36,23 @@ Description: "Uzbekistan Core DocumentReference Profile, used to stores the meta
   * attachment MS
 
 
-* status from DocumentRefereceStatusVS (required)
+* status from DocumentReferenceStatusVS (required)
 * docStatus from DocumentReferenceCompostiontionStatusVS (required)
 * bodySite from $bodysite (example)
-* facilityType from OrganizationalStructureVS (extensible)
+* facilityType from OrganizationalStructureVS (required)
 * practiceSetting from $c80-practice-codes (example)
 
 
 
-* docStatus only Reference(UZCorePatient or Group or Device or UZCorePractitioner or UZCoreOrganization or UZCoreLocation)
-* encounter only Reference(UZCoreEncounter)
+* basedOn only Reference(Appointment or AppointmentResponse or CarePlan or Claim or CommunicationRequest or Contract or 
+CoverageEligibilityRequest or DeviceRequest or EnrollmentRequest or ImmunizationRecommendation or MedicationRequest or
+NutritionOrder or RequestOrchestration or ServiceRequest or SupplyRequest or VisionPrescription)
+* subject only Reference(Resource)
+* context only Reference(Appointment or UZCoreEncounter or UZCoreEpisodeOfCare)
+* bodySite only CodeableReference(BodyStructure)
+* author only Reference(UZCorePractitioner or UZCorePractitionerRole or UZCoreOrganization or Device or UZCorePatient or 
+UZCoreRelatedPerson or CareTeam)
+* attester.party only Reference(UZCorePatient or UZCoreRelatedPerson or UZCorePractitioner or UZCorePractitionerRole or UZCoreOrganization)
+* custodian only Reference(UZCoreOrganization)
+* relatesTo.target only Reference(DocumentReference)
+
