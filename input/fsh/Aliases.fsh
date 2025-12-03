@@ -1,6 +1,8 @@
 // Alias: $encounter-class = https://terminology.dhp.uz/fhir/core/ValueSet/encounter-class
 Alias: $c80-practice-codes = http://hl7.org/fhir/ValueSet/c80-practice-codes
 Alias: $c80-facilitycodes = http://hl7.org/fhir/ValueSet/c80-facilitycodes
+Alias: $document-relationship-type = http://hl7.org/fhir/document-relationship-type
+Alias: $document-reference-composition-attestation-mode = http://hl7.org/fhir/composition-attestation-mode
 Alias: $document-reference-composition-status = http://hl7.org/fhir/composition-status
 Alias: $document-reference-status = http://hl7.org/fhir/document-reference-status
 Alias: $address-type = http://hl7.org/fhir/address-type

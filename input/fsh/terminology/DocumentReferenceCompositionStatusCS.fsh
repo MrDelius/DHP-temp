@@ -1,4 +1,4 @@
-CodeSystem: DocumentReferenceCompostiontionStatusCS
+CodeSystem: DocumentReferenceCompositionStatusCS
 Id: document-reference-composition-status-cs
 Title: "DocumentReference Composition Status Translations"
 Description: "DocumentReference Composition Status supplement with translations in Uzbek and Russian for DHP."

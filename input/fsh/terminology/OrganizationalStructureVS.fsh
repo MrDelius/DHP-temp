@@ -5,4 +5,4 @@ Description: "Defines the organizational structure of a medical institution"
 * ^url = "https://terminology.dhp.uz/fhir/core/ValueSet/organizational-structure-vs"
 * ^experimental = true
 * ^language = #uz
-* include codes from system organizational-structure-cs
+* include codes from system OrganizationalStructureCS

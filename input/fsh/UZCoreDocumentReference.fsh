@@ -37,10 +37,14 @@ Description: "Uzbekistan Core DocumentReference Profile, used to stores the meta
 
 
 * status from DocumentReferenceStatusVS (required)
-* docStatus from DocumentReferenceCompostiontionStatusVS (required)
+* category from DocumentCategoryLocalVS (extensible) 
+* type from DocumentTypeLocalVS (extensible)
+* docStatus from DocumentReferenceCompositionStatusVS (required)
 * bodySite from $bodysite (example)
 * facilityType from OrganizationalStructureVS (required)
 * practiceSetting from $c80-practice-codes (example)
+* attester.mode from DocumentReferenceCompositionAttestationModeVS (preferred)
+* relatesTo.code from DocumentRelationshipTypeVS (extensible)
 
 
 
@@ -54,5 +58,44 @@ NutritionOrder or RequestOrchestration or ServiceRequest or SupplyRequest or Vis
 UZCoreRelatedPerson or CareTeam)
 * attester.party only Reference(UZCorePatient or UZCoreRelatedPerson or UZCorePractitioner or UZCorePractitionerRole or UZCoreOrganization)
 * custodian only Reference(UZCoreOrganization)
-* relatesTo.target only Reference(DocumentReference)
+* relatesTo.target only Reference(UZCoreDocumentReference)
 
+
+
+Instance: example-document-reference
+InstanceOf: UZCoreDocumentReference
+Title: "Example Document Reference"
+Description: "Пример медицинской карты (форма 025), привязанной к пациенту и визиту."
+Usage: #example
+
+* status = $document-reference-status#current "Joriy"
+* docStatus = $document-reference-composition-status#final "Final"
+* category = DocumentCategoryLocalCS#docum-0001 "Karta"
+* type = DocumentTypeLocalCS#docum-0001-00004 "025-Ambulator tibbiy karta"
+* subject = Reference(example-patient)
+* context = Reference(example-encounter)
+* date = "2024-01-10T12:00:00+05:00"
+* period
+  * start = "2024-01-01T09:00:00+05:00"
+  * end = "2024-01-10T12:00:00+05:00"
+* author[0] = Reference(example-practitioner) // Врач, создавший документ
+* custodian = Reference(example-organization) // Организация-хранитель
+// -------Тут их не нужно давать, это выдает warning, так как их есть связь в context.---------
+// * practiceSetting = $sct#394802001 "General medicine"
+// * facilityType = OrganizationalStructureCS#132 "Ko'p tarmoqli tibbiyot markazi"
+* attester[0]
+  * mode = $document-reference-composition-attestation-mode#professional "Professional"
+  * time = "2024-01-10T12:00:00+05:00"
+  * party = Reference(example-practitioner)
+* relatesTo[0]
+  * code = $document-relationship-type#replaces "Replaces"
+  * target = Reference(example-document-reference)
+// --- Само содержимое документа (Content) ---
+* content[0]
+  * attachment
+    * contentType = #application/pdf
+    * url = "https://dhp.uz/documents/12345.pdf" // Это фейковый пример. Или используйте поле .data для base64
+    * title = "Scanned 025 Form"
+    * creation = "2024-01-10T12:00:00+05:00"
+    * language = #uz
+* bodySite.concept.text = "Whole body"
