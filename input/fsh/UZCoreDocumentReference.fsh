@@ -67,6 +67,7 @@ InstanceOf: UZCoreDocumentReference
 Title: "Example Document Reference"
 Description: "Пример медицинской карты (форма 025), привязанной к пациенту и визиту."
 Usage: #example
+* language = #uz
 
 * status = $document-reference-status#current "Joriy"
 * docStatus = $document-reference-composition-status#final "Final"
