@@ -67,12 +67,12 @@ InstanceOf: UZCoreDocumentReference
 Title: "Example Document Reference"
 Description: "Пример медицинской карты (форма 025), привязанной к пациенту и визиту."
 Usage: #example
-* language = #uz
+* language = #en
 
-* status = $document-reference-status#current "Joriy"
+* status = $document-reference-status#current "Current"
 * docStatus = $document-reference-composition-status#final "Final"
-* category = DocumentCategoryLocalCS#docum-0001 "Karta"
-* type = DocumentTypeLocalCS#docum-0001-00004 "025-Ambulator tibbiy karta"
+* category = DocumentCategoryLocalCS#docum-0001 "Card"
+* type = DocumentTypeLocalCS#docum-0001-00004 "025-Outpatient medical record"
 * subject = Reference(example-patient)
 * context = Reference(example-encounter)
 * date = "2024-01-10T12:00:00+05:00"
